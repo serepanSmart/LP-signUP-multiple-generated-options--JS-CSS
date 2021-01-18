@@ -1,0 +1,39 @@
+.hero {
+    margin-top: 90px;
+    height: 50vh;
+    display: flex;
+    position: relative;
+    background: linear-gradient(to right, $accent, transparent), url(../../assets/img/banner.jpg) center/cover no-repeat;
+
+    @include screen(lg) {
+        min-height: 600px;
+    }
+
+    .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin: auto;
+    }
+
+    span {
+        font-size: 1.25rem;
+        margin-bottom: 35px;
+        @include screen(lg) {
+            font-size: 1.375rem;
+        }
+    }
+
+    h1,
+    span {
+        margin-bottom: 35px;
+        text-shadow: 1px 2px 4px $accent;
+
+        @include screen(lg) {
+            margin-bottom: 60px;
+            width: 60%;
+        }
+    }
+}

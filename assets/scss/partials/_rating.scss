@@ -1,0 +1,25 @@
+.rating {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        .google-img {
+            margin-right: 20px;
+        }
+        p {
+            display: block;
+            font-size: 2rem;
+            text-align: center;
+            img {
+                width: 30px;
+                height: 30px;
+                vertical-align: baseline;
+            }
+            span {
+                display: block;
+                margin-top: 5px;
+            }
+        }
+    }
+}

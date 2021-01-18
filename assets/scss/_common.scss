@@ -1,0 +1,146 @@
+html,
+body {
+  box-sizing: border-box;
+  font-family: $font;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font_title;
+}
+
+h1 {
+  font-size: $s2;
+  @include screen(lg) {
+    font-size: $big;
+  }
+}
+
+h2 {
+  font-size: $s3;
+}
+
+a {
+  text-decoration: none;
+  outline: transparent;
+  cursor: pointer;
+  transition: $transition;
+}
+
+p,
+span,
+a, button {
+  font-size: $s1;
+}
+
+.main-btn {
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.main-btn {
+  display: inline-block;
+  padding: 12px 12px 12px 16px;
+  min-width: 100px;
+  text-align: center;
+  border-radius: 0;
+  transition: $transition;
+  font-weight: 700;
+  cursor: pointer;
+  outline: transparent;
+
+  @include screen(md) {
+    min-width: 130px;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 22px;
+    margin-left: 12px;
+    background: url(../../assets/img/button-arrow.svg) center/contain no-repeat;
+    vertical-align: bottom;
+    transition: $transition;
+  }
+
+  &_full {
+    background: $primary;
+    color: $accent;
+    border: 1px solid $primary;
+
+    &:hover {
+      background: $accent;
+      color: $primary;
+    }
+  }
+
+  &_hollow {
+    background: $accent;
+    color: $primary;
+    border: 1px solid rgba($primary, 0.3);
+
+    &:hover {
+      background: $primary;
+      color: $accent;
+    }
+  }
+
+  &:hover {
+    &::after {
+      transform: translateX(5px);
+    }
+  }
+}
+
+.decor-title {
+  width: 100%;
+  display: block;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  position: relative;
+
+  &::after {
+    content: url(../../assets/img/line.svg);
+    display: block;
+  }
+}
+
+.content {
+  &__section {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+}
+
+//FLICKITY
+.flickity-enabled {
+  outline: transparent !important;
+
+  div {
+    outline: transparent !important;
+  }
+
+  .flickity-slider,
+  .flickity-viewport {
+    width: 100%;
+  }
+  .flickity-viewport {
+    overflow: hidden;
+  }
+}
