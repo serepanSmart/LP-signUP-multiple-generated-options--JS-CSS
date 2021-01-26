@@ -20,9 +20,9 @@ const toStorage = () =>
   localStorage.setItem('answer', JSON.stringify(answerObject))
 
 let isErrorMessage = false
-let errorText1 = 'Please select the desired option'
-let errorText2 = 'All fields should be filled'
-let errorText3 = 'Please fill "email" field in correct way'
+const errorText1 = 'Please select the desired option'
+const errorText2 = 'All fields should be filled'
+const errorText3 = 'Please fill "email" field in correct way'
 
 const setErrorMessage = (text) => {
   if (!isErrorMessage) {
