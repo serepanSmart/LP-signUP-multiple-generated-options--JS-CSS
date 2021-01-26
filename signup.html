@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/flickity@2/dist/flickity.min.css"/>
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Sign UP</title>
   </head>
@@ -18,14 +19,14 @@
       </div>
     </header>
     <main class="signup__steps">
-       
-        <div class="signup__container">
-            <div class="signup__back"><button type="button">&#8592;</button></div>
-            <h1></h1>
-            <div id="steps">
-            </div>
-            <button id="next-step" class="signup__button main-btn main-btn_hollow">Next</button>
-        </div>
+      <form class="signup__container" id="signup-form">
+        <div class="signup__back"><button type="button">&#8592;</button></div>
+        <h1></h1>
+        <div id="steps"></div>
+        <button type="button" id="next-step" class="signup__button main-btn main-btn_hollow">
+          Next
+        </button>
+      </form>
     </main>
     <script src="assets/js/main.min.js"></script>
   </body>

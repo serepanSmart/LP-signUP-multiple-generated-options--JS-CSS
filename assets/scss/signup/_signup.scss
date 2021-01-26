@@ -6,6 +6,7 @@
         justify-content: center;
         background: url(https://snappr.imgix.net/media/bookingflow-bg.jpg?auto=format%2Ccompress&w=2800&s=4e5415a9847348bc40fafe96d1ab3282) center/cover no-repeat;
     }
+
     &__container {
         width: 95%;
         max-width: 700px;
@@ -14,7 +15,8 @@
         display: flex;
         flex-direction: column;
         background: $accent;
-        box-shadow: 0 3px 8px -2px rgba(20,27,36,0.6);
+        box-shadow: 0 3px 8px -2px rgba(20, 27, 36, 0.6);
+
         @include screen(md) {
             padding: 25px;
         }
@@ -24,6 +26,7 @@
             margin-bottom: 25px;
         }
     }
+
     &__back {
         button {
             font-size: 1.5rem;
@@ -31,37 +34,13 @@
             background: transparent;
             cursor: pointer;
             outline: transparent;
+
             &:hover {
                 color: #de07ff;
             }
         }
     }
-    &__button {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        font-family: inherit;
-        text-align: left;
-        margin-bottom: 15px;
-        &:hover {
-            background: $accent;
-            color: $primary;
-        }
-        &.w-49 {
-            @include screen(md) {
-                max-width: 49%;
-            }
-        }
-        &.checked {
-            filter: invert(1);
-        }
-        img {
-            width: 25px;
-            height: 25px;
-            display: block;
-            margin-right: 5px;
-        }
-    }
+
     #steps {
         width: 100%;
         margin-bottom: 20px;
@@ -73,16 +52,81 @@
             width: calc(100% - 22px);
             padding: 10px;
             font-family: $font;
+            border: 1px solid #141b246e;
+
+            &:not(:last-of-type) {
+                margin-bottom: 15px;
+            }
+            &::placeholder {
+                transition: $transition;
+            }
+            &:focus {
+                outline-color: #ff0035;
+                &::placeholder {
+                    opacity: 0;
+                }
+            }
         }
         textarea {
             min-height: 250px;
         }
-        label {
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 15px;
+        font-family: $font;
+    }
+
+    &__button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-family: inherit;
+        text-align: left;
+        margin-bottom: 15px;
+
+        &:hover {
+            background: $accent;
+            color: $primary;
+        }
+
+        &::after {
+            flex-shrink: 0;
+        }
+
+        &.w-45 {
+            @include screen(md) {
+                max-width: 45%;
+            }
+        }
+
+        &.checked {
+            filter: invert(1);
+        }
+
+        img {
+            width: 25px;
+            height: 25px;
             display: block;
-            margin-bottom: 15px;
-            font-family: $font;
+            margin-right: 5px;
         }
     }
+
+    &__input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        z-index: -1;
+
+        &:checked {
+            +.signup__button {
+                filter: invert(1);
+            }
+        }
+    }
+
     &__error {
         padding: 5px;
         font-family: $font_title;
@@ -97,13 +141,16 @@
         animation-duration: 0.7s;
     }
 }
+
 @keyframes jump {
     0% {
         transform: none;
     }
+
     50% {
         transform: translateY(-5px);
     }
+
     100% {
         transform: none;
     }

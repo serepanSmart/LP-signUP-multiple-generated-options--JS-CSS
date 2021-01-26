@@ -51,10 +51,10 @@ function js() {
     './assets/js/buttons-render.js',
   ]).
     pipe(concat('main.min.js')).
-    pipe(uglify({ 
-      mangle: false, 
-      ecma: 6 
-   })).
+  //   pipe(uglify({ 
+  //     mangle: false, 
+  //     ecma: 6 
+  //  })).
     pipe(dest(path.jsFolder));
 } 
 function scssDev() {
